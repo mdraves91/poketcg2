@@ -1130,7 +1130,7 @@ SetOWObjectTargetPosition:
 	ld b, WEST
 .got_x_dir
 	ld a, [wd595]
-	farcall SetOWObjectDirection
+	farcall _SetOWObjectDirection
 	ld a, 1
 	ld [wOWObjYVelocity], a
 	ld a, [wOWObjTargetY]
@@ -1181,7 +1181,7 @@ SetOWObjectTargetPosition:
 	ld b, NORTH
 .got_y_dir
 	ld a, [wd595]
-	farcall SetOWObjectDirection
+	farcall _SetOWObjectDirection
 	ld a, 1
 	ld [wOWObjXVelocity], a
 	ld a, [wOWObjTargetX]
