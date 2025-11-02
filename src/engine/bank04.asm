@@ -4,7 +4,7 @@ StartUpDebugMenu::
 	push de
 	push hl
 	push af
-	ld a, SFX_02
+	ld a, SFX_ACCEPT
 	call CallPlaySFX
 	pop af
 .loop
@@ -72,13 +72,13 @@ HandleStartupDebugMenuBox:
 	ld [wDebugMenuCursorPosition], a
 	jr c, .asm_1008a
 	push af
-	ld a, SFX_02
+	ld a, SFX_ACCEPT
 	call CallPlaySFX
 	pop af
 	ret
 .asm_1008a
 	push af
-	ld a, SFX_03
+	ld a, SFX_CANCEL
 	call CallPlaySFX
 	pop af
 	ret
@@ -1184,7 +1184,7 @@ Func_10772:
 	ld a, b
 	ld [wd8a0], a
 	push af
-	ld a, SFX_02
+	ld a, SFX_ACCEPT
 	call CallPlaySFX
 	pop af
 .asm_1078a
@@ -1251,13 +1251,13 @@ Func_1081a:
 	ld [wd89f], a
 	jr c, .asm_1082e
 	push af
-	ld a, SFX_02
+	ld a, SFX_ACCEPT
 	call CallPlaySFX
 	pop af
 	ret
 .asm_1082e
 	push af
-	ld a, SFX_03
+	ld a, SFX_CANCEL
 	call CallPlaySFX
 	pop af
 	ret
@@ -3058,13 +3058,13 @@ _PCMenu:
 	ld [wPCMenuCursorPosition], a
 	jr c, .asm_11161
 	push af
-	ld a, SFX_02
+	ld a, SFX_ACCEPT
 	call CallPlaySFX
 	pop af
 	ret
 .asm_11161
 	push af
-	ld a, SFX_03
+	ld a, SFX_CANCEL
 	call CallPlaySFX
 	pop af
 	ret

@@ -539,9 +539,9 @@ INCLUDE "audio/wave_instruments.asm"
 
 INCLUDE "audio/sfx/sfx_60.asm"
 
-INCLUDE "audio/sfx/sfx_01.asm"
-INCLUDE "audio/sfx/sfx_02.asm"
-INCLUDE "audio/sfx/sfx_03.asm"
+INCLUDE "audio/sfx/sfx_move_cursor.asm"
+INCLUDE "audio/sfx/sfx_accept.asm"
+INCLUDE "audio/sfx/sfx_cancel.asm"
 INCLUDE "audio/sfx/sfx_04.asm"
 INCLUDE "audio/sfx/sfx_05.asm"
 INCLUDE "audio/sfx/sfx_06.asm"

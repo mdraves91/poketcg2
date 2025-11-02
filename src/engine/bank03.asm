@@ -5795,7 +5795,7 @@ ChangeAnimationPlayerSideOnStartPress:
 	and PAD_START
 	ret z
 	push af
-	ld a, SFX_02
+	ld a, SFX_ACCEPT
 	call CallPlaySFX
 	pop af
 	ld b, OPPONENT_TURN
@@ -5861,7 +5861,7 @@ CancelAnimationOnBPress:
 	and PAD_B
 	ret z
 	push af
-	ld a, SFX_03
+	ld a, SFX_CANCEL
 	call CallPlaySFX
 	pop af
 	call FinishQueuedAnimations

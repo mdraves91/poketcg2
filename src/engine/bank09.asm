@@ -403,7 +403,7 @@ HandleWaitingLinkOpponentMenu:
 	ret nz
 	and PAD_LEFT | PAD_RIGHT
 	ret z
-	ld a, SFX_01
+	ld a, SFX_MOVE_CURSOR
 	call PlaySFX
 	call EraseCursor
 	ld hl, wCurrentDuelMenuItem

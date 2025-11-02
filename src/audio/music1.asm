@@ -2372,9 +2372,9 @@ INCLUDE "audio/presets.asm"
 ; all real SFX have the same priority (SFX_STOP does not use this table)
 Music1_SFXPriorities:
 	db $00 ; SFX_STOP
-	db $0a ; SFX_01
-	db $0a ; SFX_02
-	db $0a ; SFX_03
+	db $0a ; SFX_MOVE_CURSOR
+	db $0a ; SFX_ACCEPT
+	db $0a ; SFX_CANCEL
 	db $0a ; SFX_04
 	db $0a ; SFX_05
 	db $0a ; SFX_06

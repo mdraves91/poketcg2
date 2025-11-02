@@ -5970,16 +5970,16 @@ WhatIsYourNameData:
 SECTION "Bank 6@6e92", ROMX[$6e92], BANK[$6]
 
 ; play different sfx by a.
-; if a is 0xff play SFX_03 (usually following a B press),
-; else play SFX_02 (usually following an A press).
+; if a is 0xff play SFX_CANCEL (usually following a B press),
+; else play SFX_ACCEPT (usually following an A press).
 PlayAcceptOrDeclineSFX_Bank06:
 	push af
 	inc a
 	jr z, .sfx_decline
-	ld a, SFX_02
+	ld a, SFX_ACCEPT
 	jr .sfx_accept
 .sfx_decline
-	ld a, SFX_03
+	ld a, SFX_CANCEL
 .sfx_accept
 	call PlaySFX
 	pop af
@@ -6435,7 +6435,7 @@ HandleNamingScreenInput:
 	ld a, KEYBOARD_UNKNOWN
 	cp d
 	jp z, .start
-	ld a, SFX_01
+	ld a, SFX_MOVE_CURSOR
 	ld [wMenuInputSFX], a
 
 .check_btns

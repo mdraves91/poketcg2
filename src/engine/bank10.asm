@@ -919,7 +919,7 @@ HandleTCGIslandDirectionalInput:
 	ret
 
 .got_key
-	ld a, SFX_01
+	ld a, SFX_MOVE_CURSOR
 	call PlaySFX
 	ld a, [wCurOWLocation]
 	ld b, a

@@ -6852,7 +6852,7 @@ Func_37493:
 	move_active_npc .NPCMovement_37524
 	wait_for_player_animation
 	do_frames 30
-	play_sfx SFX_02
+	play_sfx SFX_ACCEPT
 	check_event EVENT_GR_CASTLE_ENTRANCE_DOOR_STATE
 	script_jump_if_b0z .ows_374f8
 	load_palette PALETTE_189
@@ -6937,7 +6937,7 @@ Func_37534:
 	move_active_npc .NPCMovement_375c5
 	wait_for_player_animation
 	do_frames 30
-	play_sfx SFX_02
+	play_sfx SFX_ACCEPT
 	check_event EVENT_GR_CASTLE_ENTRANCE_DOOR_STATE
 	script_jump_if_b0z .ows_37599
 	load_palette PALETTE_188
