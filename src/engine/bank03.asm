@@ -5712,8 +5712,8 @@ DebugMenuEffectViewer:
 	call ChangeEffectNumberOnDpadPress.initialize
 	call Func_3d0d
 	push af
-	ld a, MUSIC_DUELTHEME_1
-	call SetMusic
+	; ld a, MUSIC_DUELTHEME_1
+	; call SetMusic
 	pop af
 	farcall StartFadeFromWhite
 	farcall WaitPalFading_Bank07
@@ -5747,11 +5747,13 @@ PlayAnimationOnAPress:
 	and PAD_A
 	ret z
 	ld a, [wDebugSelectedAnimNumber]
+	; call SetMusic ; use this for music testing
+	call PlaySFX ; use this for SFX testing
 	and a
 	ret z
-	cp $8d ; highest number animation
+	cp $ff
 	jr z, .play
-	cp $8d
+	cp $ff
 	ret nc
 .play
 	call FinishQueuedAnimations
@@ -5774,7 +5776,7 @@ PlayAnimationOnAPress:
 	ld [hl], b
 	ld a, $07
 	ld [wDuelAnimSetScreen], a
-	call LoadDuelAnimationToBuffer
+	; call LoadDuelAnimationToBuffer
 	ret
 
 DebugEffectViewer_PlaceTextItems:
