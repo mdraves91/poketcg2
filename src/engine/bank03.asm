@@ -5795,7 +5795,7 @@ ChangeAnimationPlayerSideOnStartPress:
 	and PAD_START
 	ret z
 	push af
-	ld a, SFX_ACCEPT
+	ld a, SFX_CONFIRM
 	call CallPlaySFX
 	pop af
 	ld b, OPPONENT_TURN

@@ -424,7 +424,7 @@ HandleConfigMenu:
 	call HandleConfigExitMenuBox
 	jr nc, .done
 	push af
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	call CallPlaySFX
 	pop af
 	ldh a, [hKeysPressed]
@@ -437,7 +437,7 @@ HandleConfigMenu:
 	ld c, 1
 	call HandleMessageSpeedSettingMenuBox
 	push af
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	call CallPlaySFX
 	pop af
 	ldh a, [hKeysPressed]
@@ -450,7 +450,7 @@ HandleConfigMenu:
 	ld c, 2
 	call HandleDuelAnimationsSettingMenuBox
 	push af
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	call CallPlaySFX
 	pop af
 	ldh a, [hKeysPressed]
@@ -463,7 +463,7 @@ HandleConfigMenu:
 	ld c, 3
 	call HandleCoinTossAnimationSettingMenuBox
 	push af
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	call CallPlaySFX
 	pop af
 	ldh a, [hKeysPressed]
@@ -476,7 +476,7 @@ HandleConfigMenu:
 	ld c, 4
 	call HandleTextBoxFrameColorSettingMenuBox
 	push af
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	call CallPlaySFX
 	pop af
 	ldh a, [hKeysPressed]
@@ -488,7 +488,7 @@ HandleConfigMenu:
 	jp .exit_menu_box
 .done
 	push af
-	ld a, SFX_ACCEPT
+	ld a, SFX_CONFIRM
 	call CallPlaySFX
 	pop af
 	ld a, c
@@ -1726,7 +1726,7 @@ HandleMenuBox:
 	add h ; warp around
 .no_overflow_1
 	push af
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	call CallPlaySFX
 	pop af
 	call .UnfocusItem
@@ -1750,7 +1750,7 @@ HandleMenuBox:
 	sub h ; warp around
 .no_overflow_2
 	push af
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	call CallPlaySFX
 	pop af
 	call .UnfocusItem
@@ -1771,7 +1771,7 @@ HandleMenuBox:
 	add h
 .no_overflow_3
 	push af
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	call CallPlaySFX
 	pop af
 	call .UnfocusItem
@@ -1793,7 +1793,7 @@ HandleMenuBox:
 	sub h
 .no_overflow_4
 	push af
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	call CallPlaySFX
 	pop af
 	call .UnfocusItem
@@ -2332,7 +2332,7 @@ HandleStartMenuBox:
 	ld [wMenuCursorPosition], a
 	jr c, .selected
 	push af
-	ld a, SFX_ACCEPT
+	ld a, SFX_CONFIRM
 	call CallPlaySFX
 	pop af
 	ret
@@ -3085,7 +3085,7 @@ Func_1d66e:
 	ld [wdb18], a
 	jr c, .asm_1d68c
 	push af
-	ld a, SFX_ACCEPT
+	ld a, SFX_CONFIRM
 	call CallPlaySFX
 	pop af
 	jr .asm_1d695
@@ -3536,7 +3536,7 @@ Func_1da88:
 	pop af
 	jr c, .asm_1daad
 	push af
-	ld a, SFX_ACCEPT
+	ld a, SFX_CONFIRM
 	call CallPlaySFX
 	pop af
 	ret
@@ -3753,7 +3753,7 @@ CoinMenu:
 	farcall SetFrameFuncAndFadeFromWhite
 	call Func_1deac
 	push af
-	ld a, SFX_ACCEPT
+	ld a, SFX_CONFIRM
 	call CallPlaySFX
 	pop af
 	farcall FadeToWhiteAndUnsetFrameFunc
@@ -4095,7 +4095,7 @@ Func_1df10:
 	ret z
 
 	push af
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	call CallPlaySFX
 	pop af
 	ld a, [wCoinPage]
@@ -4120,7 +4120,7 @@ Func_1df36:
 	cp 2
 	jr z, .done
 	push af
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	call CallPlaySFX
 	pop af
 	ld a, [wCoinPage]
@@ -4144,7 +4144,7 @@ Func_1df60:
 	and a
 	jr z, .done
 	push af
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	call CallPlaySFX
 	pop af
 	ld a, [wCoinPage]

@@ -317,7 +317,7 @@ Func_30242:
 	jr nz, .loop_shift
 	ret
 .asm_30250
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	call PlaySFX
 	ld a, [wCurOWLocation]
 	ld b, a
@@ -5769,7 +5769,7 @@ Func_33470:
 .ows_3349d
 	print_text Text0be0
 	load_palette PALETTE_187
-	play_sfx SFX_ACCEPT
+	play_sfx SFX_CONFIRM
 	load_npc NPC_RED_FORT_COIN, 4, 7, SOUTH
 	script_jump .ows_334b0
 .ows_334ad
@@ -5802,7 +5802,7 @@ Func_334b3:
 .ows_334e0
 	print_text Text0be4
 	load_palette PALETTE_186
-	play_sfx SFX_ACCEPT
+	play_sfx SFX_CONFIRM
 	load_npc NPC_BLUE_FORT_COIN, 5, 7, SOUTH
 	script_jump .ows_334f3
 .ows_334f0

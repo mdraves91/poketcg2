@@ -1,7 +1,7 @@
 	const_def
 	const SFX_STOP            ; $00
-	const SFX_MOVE_CURSOR     ; $01
-	const SFX_ACCEPT          ; $02
+	const SFX_CURSOR          ; $01
+	const SFX_CONFIRM         ; $02
 	const SFX_CANCEL          ; $03
 	const SFX_04              ; $04
 	const SFX_05              ; $05

@@ -100,7 +100,7 @@ HandleMenuInput::
 	xor a ; wrapping around, so load the topmost item
 .handle_up_or_down
 	push af
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	ld [wRefreshMenuCursorSFX], a ; buffer sound for up/down
 	call EraseCursor
 	pop af
@@ -144,14 +144,14 @@ HandleMenuInput::
 	scf
 	ret
 
-; plays an "open screen" sound (SFX_ACCEPT) if [hCurScrollMenuItem] != 0xff
+; plays an "open screen" sound (SFX_CONFIRM) if [hCurScrollMenuItem] != 0xff
 ; plays an "exit screen" sound (SFX_CANCEL) if [hCurScrollMenuItem] == 0xff
 PlayOpenOrExitScreenSFX::
 	push af
 	ldh a, [hCurScrollMenuItem]
 	inc a
 	jr z, .play_exit_sfx
-	ld a, SFX_ACCEPT
+	ld a, SFX_CONFIRM
 	jr .play_sfx
 .play_exit_sfx
 	ld a, SFX_CANCEL
@@ -258,7 +258,7 @@ HandleDuelMenuInput::
 	and 1
 .dpad_pressed
 	push af
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	call PlaySFX
 	call .erase_cursor
 	pop af
@@ -1010,7 +1010,7 @@ HandleYesOrNoMenu::
 	and PAD_RIGHT | PAD_LEFT
 	jr z, .wait_button_loop
 	; left or right pressed, so switch to the other menu item
-	ld a, SFX_MOVE_CURSOR
+	ld a, SFX_CURSOR
 	call PlaySFX
 	call EraseCursor
 .refresh_menu
