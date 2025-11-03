@@ -21,7 +21,7 @@ GameLoop::
 	ldh a, [hKeysHeld]
 	cp PAD_A | PAD_B
 	jr z, .ask_erase_backup_ram
-	farcall $4, CoreGameLoop ; unnecessary farcall?
+	farcall $4, CallStartupDebugMenu ; unnecessary farcall?
 	jr GameLoop
 
 .not_cgb
